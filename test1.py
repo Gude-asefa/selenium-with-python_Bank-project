@@ -10,6 +10,7 @@ driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()
 
 class BankProject():
     def login_test(self):
+        
         driver.get(config.base_url)
         user_id= driver.find_element(By.XPATH , ("//input[@name='uid']"))
         user_id.send_keys(config.id)
@@ -22,7 +23,7 @@ class BankProject():
         time.sleep(2)
 
 
-        driver.close()
+        #driver.close()
 
 demo=BankProject()
 demo.login_test()
