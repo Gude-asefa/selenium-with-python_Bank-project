@@ -3,19 +3,19 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By  # Import By
 import time
+import config
 
 driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
-# id :mngr603529
-# Password :	pujEbEv
+
 class BankProject():
     def login_test(self):
-        driver.get("http://www.demo.guru99.com/V4/")
+        driver.get(config.base_url)
         user_id= driver.find_element(By.XPATH , ("//input[@name='uid']"))
-        user_id.send_keys("mngr603529")
+        user_id.send_keys(config.id)
         time.sleep(1)
 
-        driver.find_element(By.XPATH , "//input[@name='password']").send_keys("pujEbEv")
+        driver.find_element(By.XPATH , "//input[@name='password']").send_keys(config.Password)
         time.sleep(1)
 
         driver.find_element(By.XPATH , "//input[@name='btnLogin']").click()
