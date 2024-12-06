@@ -2,12 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By  # Import By
+from selenium.webdriver.support.ui import Select
 import time
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 def evangadi_testing():
-    driver.get("https://www.evangadi.com")
+    ''' driver.get("https://www.evangadi.com")
     print(driver.current_url)
     print(driver.title)
     driver.maximize_window()
@@ -24,7 +25,17 @@ def evangadi_testing():
 
     text= driver.find_element(By.CLASS_NAME ,"lnk-toggler").text
     print(text)
+    
+    '''
+
+    driver.get("https://www.ethiopianairlines.com/et")
+    dropdown= driver.find_element(By.CSS_SELECTOR ,"div[class='card card-body'] div div[class='widget-input mt-2'] div[class='d-flex']").click()
+
+    dd=Select(dropdown)
+
+
 
     driver.quit()
 
 evangadi_testing()
+

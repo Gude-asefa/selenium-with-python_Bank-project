@@ -9,6 +9,11 @@ import TIME
 IMPORT BY
  from selenium.webdriver.common.by import By  # Import By
 
+IMPORT KEYS
+
+from selenium.webdriver.common.keys import Keys
+
+
 
 
 
