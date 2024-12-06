@@ -1,3 +1,18 @@
+IMPORT SELECT 
+
+from selenium.webdriver.support.ui import Select
+
+IMPORT TIME 
+
+import TIME
+
+IMPORT BY
+ from selenium.webdriver.common.by import By  # Import By
+
+
+
+
+
 FOR CHROME 
 
 from selenium import webdriver

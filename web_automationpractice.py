@@ -1,20 +1,30 @@
-
-
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By  # Import By
+import time
 
-# Set up Chrome options
-chrome_options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-# Initialize the Chrome driver
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+def evangadi_testing():
+    driver.get("https://www.evangadi.com")
+    print(driver.current_url)
+    print(driver.title)
+    driver.maximize_window()
+    driver.minimize_window()
+    driver.fullscreen_window()
+    
+    time.sleep(4)
 
-# Open the Evangadi website
-driver.get("https://www.evangadi.com")
+    driver.find_element(By.CLASS_NAME ,"button-2").click()
+    driver.back()
+    driver.forward()
+    time.sleep(5)
+    driver.refresh()
 
-# Print the title of the page
-print(driver.title)
+    text= driver.find_element(By.CLASS_NAME ,"lnk-toggler").text
+    print(text)
 
-# Close the driver
-driver.quit()
+    driver.quit()
+
+evangadi_testing()
