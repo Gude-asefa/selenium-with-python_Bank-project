@@ -9,9 +9,9 @@ def read_data_from_excel(file_name, sheet):
     row_ct=sh.max_row
     col_ct=sh.max_column
 
-    for i in range(2, row_ct+1):
+    for i in range(1, row_ct+1):
         row=[]
-        for j in range(1, col_ct+1):
+        for j in range(5, 7):
             row.append(sh.cell(row=i, column=j).value)
         data_list.append(row)
         
